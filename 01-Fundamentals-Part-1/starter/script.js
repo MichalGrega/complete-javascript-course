@@ -21,6 +21,7 @@ let PI = 3.1415
 //Comments
 */
 
+/* DATA TYPES
 // console.log(true);
 
 // Boolean value
@@ -46,3 +47,19 @@ console.log(typeof year);
 
 // type of null is object - javascript bug. Not corrected for legacy reasons
 console.log(typeof null);
+*/
+
+//reassigning or we mutate the variable
+let age = 30;
+age = 31;
+
+const birthYear = 1991;
+// birthYear = 1990;
+// const job;
+
+var job = 'programmer';
+job = 'teacher';
+
+// Without declaring JavaScript creates global variable. Bad Idea.
+lastNmae = 'Schmedtmann;'
+console.log(lastName);
