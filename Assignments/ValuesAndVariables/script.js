@@ -20,3 +20,12 @@ console.log(
 // let, const, var
 language = "slovak";
 // country = "Czech";
+
+// Basic Operators
+console.log(population / 2);
+// console.log(population++);
+const finlandPopulation = 6;
+console.log(population > finlandPopulation);
+console.log(population < 33);
+let description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
+console.log(description); 
