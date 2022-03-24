@@ -104,11 +104,11 @@ class Person {
     this.height = height;
     this.weight = weight;
     // this.BMI = this.weight / (this.height ** 2);
-  };
+  }
 
   get BMI() {
-    return this.weight / (this.height ** 2);
-  } 
+    return this.weight / this.height ** 2;
+  }
 }
 let mark = new Person(1.69, 78);
 let john = new Person(1.95, 92);
