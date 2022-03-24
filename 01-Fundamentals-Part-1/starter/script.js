@@ -66,6 +66,7 @@ lastNmae = 'Schmedtmann;'
 console.log(lastName);
 */
 
+/*
 // OPERATORS
 
 //Math operators
@@ -96,3 +97,30 @@ console.log(ageSarah >= 18);
 const isFullAge = ageSarah >= 18;
 
 console.log(now - 1991 > now - 2018);
+*/
+
+class Person {
+  constructor(height, weight) {
+    this.height = height;
+    this.weight = weight;
+    // this.BMI = this.weight / (this.height ** 2);
+  };
+
+  get BMI() {
+    return this.weight / (this.height ** 2);
+  } 
+}
+let mark = new Person(1.69, 78);
+let john = new Person(1.95, 92);
+
+let markHigherBMI = mark.BMI > john.BMI;
+console.log(markHigherBMI);
+
+mark.height = 1.88;
+mark.weight = 95;
+john.height = 1.76;
+john.weight = 85;
+
+markHigherBMI = mark.BMI > john.BMI;
+console.log(markHigherBMI);
+
