@@ -124,3 +124,6 @@ john.weight = 85;
 markHigherBMI = mark.BMI > john.BMI;
 console.log(markHigherBMI);
 
+console.log(`String
+multiple
+lines`);
