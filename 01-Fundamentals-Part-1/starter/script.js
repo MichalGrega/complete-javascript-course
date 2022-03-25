@@ -113,17 +113,29 @@ class Person {
 let mark = new Person(1.69, 78);
 let john = new Person(1.95, 92);
 
-let markHigherBMI = mark.BMI > john.BMI;
-console.log(markHigherBMI);
+// let markHigherBMI = mark.BMI > john.BMI;
+// console.log(markHigherBMI);
+
+if (mark.BMI > john.BMI) {
+  console.log(`Mark's BMI ${mark.BMI} is higher than John's ${john.BMI}`);
+} else {
+  console.log(`John's BMI ${john.BMI} is higher than Mark's ${mark.BMI}`);
+}
 
 mark.height = 1.88;
 mark.weight = 95;
 john.height = 1.76;
 john.weight = 85;
 
-markHigherBMI = mark.BMI > john.BMI;
-console.log(markHigherBMI);
+// markHigherBMI = mark.BMI > john.BMI;
+// console.log(markHigherBMI);
 
-console.log(`String
-multiple
-lines`);
+// console.log(`String
+// multiple
+// lines`);
+
+if (mark.BMI > john.BMI) {
+  console.log(`Mark's BMI ${mark.BMI} is higher than John's ${john.BMI}`);
+} else {
+  console.log(`John's BMI ${john.BMI} is higher than Mark's ${mark.BMI}`);
+}
