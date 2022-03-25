@@ -99,6 +99,8 @@ const isFullAge = ageSarah >= 18;
 console.log(now - 1991 > now - 2018);
 */
 
+/*
+// Coding challenge #1 and #2
 class Person {
   constructor(height, weight) {
     this.height = height;
@@ -138,4 +140,55 @@ if (mark.BMI > john.BMI) {
   console.log(`Mark's BMI ${mark.BMI} is higher than John's ${john.BMI}`);
 } else {
   console.log(`John's BMI ${john.BMI} is higher than Mark's ${mark.BMI}`);
+}
+*/
+
+/*
+let height = 235;
+if (height){
+  console.log('True');
+} else {
+  console.log('False');
+}
+*/
+
+const avg = (arr) => arr.reduce((p, c) => p+c, 0) / arr.length;
+
+
+
+let dolphins =[96, 108, 89];
+let koalas = [88, 91, 110];
+
+if (avg(dolphins) > avg(koalas)) {
+  console.log('Dolphins win');
+} else if (avg(dolphins) < avg(koalas)) {
+  console.log('Koalas win');
+} else {
+  console.log('Draw');
+}
+
+dolphins =[97, 112, 101];
+koalas = [109, 95, 123];
+
+if ((avg(dolphins) > avg(koalas)) && avg(dolphins) > 100) {
+  console.log('Dolphins win with score: ' + avg(dolphins));
+} else if (avg(dolphins) < avg(koalas) && avg(koalas) > 100) {
+  console.log('Koalas win with score ' + avg(koalas));
+} else if (avg(dolphins) === avg(koalas)) {
+  console.log('Draw with score ' + avg(dolphins));
+} else {
+  console.log('No winner');
+}
+
+dolphins =[97, 112, 101];
+koalas = [109, 95, 106];
+
+if ((avg(dolphins) > avg(koalas)) && avg(dolphins) >= 100) {
+  console.log('Dolphins win with score: ' + avg(dolphins));
+} else if (avg(dolphins) < avg(koalas) && avg(koalas) >= 100) {
+  console.log('Koalas win with score ' + avg(koalas));
+} else if (avg(dolphins) === avg(koalas) && avg(koalas) >= 100) {
+  console.log('Draw with score ' + avg(dolphins));
+} else {
+  console.log('No winner');
 }
