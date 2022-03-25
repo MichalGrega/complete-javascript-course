@@ -151,7 +151,7 @@ if (height){
   console.log('False');
 }
 */
-
+/*
 const avg = (arr) => arr.reduce((p, c) => p+c, 0) / arr.length;
 
 
@@ -192,3 +192,10 @@ if ((avg(dolphins) > avg(koalas)) && avg(dolphins) >= 100) {
 } else {
   console.log('No winner');
 }
+*/
+
+let bill = 430;
+let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total was ${bill + tip}.`
+)
