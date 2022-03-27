@@ -134,6 +134,7 @@ console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
 */
 
+/*
 function calcTip(bill){
   return bill>= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
@@ -141,3 +142,31 @@ function calcTip(bill){
 const bills = [125, 555, 44]
 const tips = bills.map(e => calcTip(e));
 const totals = bills.map(e => e + calcTip(e));
+*/
+
+/*
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Kaufmann',
+  birthYear: 1991,
+  age
+}
+*/
+
+class Person{
+  constructor(name, weight, height) {
+    this.name = name;
+    this.weight = weight;
+    this.height = height;
+  }
+
+  get BMI() {
+    return this.weight / (this.height * this.height);
+  }
+
+}
+
+const mark = new Person('Mark', 78, 1.69);
+const john = new Person('John', 92, 1.95);
+
+console.log(mark.BMI > john.BMI ? `${mark.name}'s BMI (${mark.BMI}) is higher than ${john.name}'s BMI (${john.BMI})` : `${john.name}'s BMI (${john.BMI}) is higher than ${mark.name}'s BMI (${mark.BMI})`);
