@@ -153,6 +153,8 @@ const jonas = {
 }
 */
 
+/*
+
 class Person{
   constructor(name, weight, height) {
     this.name = name;
@@ -170,3 +172,26 @@ const mark = new Person('Mark', 78, 1.69);
 const john = new Person('John', 92, 1.95);
 
 console.log(mark.BMI > john.BMI ? `${mark.name}'s BMI (${mark.BMI}) is higher than ${john.name}'s BMI (${john.BMI})` : `${john.name}'s BMI (${john.BMI}) is higher than ${mark.name}'s BMI (${mark.BMI})`);
+*/
+
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+function calcTip(bill){
+  return bill>= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+function calcAverage(array){
+  let sum = 0;
+  for (let i=0; i<array.length; i++){
+    sum += array[i];
+  }
+  return sum / array.length;
+}
+
+for (let i = 0; i < bills.length; i++){
+  tips.push(calcTip(bills[i]));
+  totals.push(bills[i] + calcTip(bills[i]));
+}
