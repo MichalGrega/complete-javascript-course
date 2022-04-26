@@ -30,8 +30,72 @@ const restaurant = {
       close: 24,
     },
   },
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered at ${time} to ${address}`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(
+      `Here is your pizza with ${mainIngredient} and ${otherIngredients.join(
+        ', '
+      )}`
+    );
+  },
 };
 
+/*
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, categories, openingHours);
+
+const {
+  name: restauntName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restauntName, hours, tags);
+
+// Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+*/
+
+/*
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -63,3 +127,51 @@ console.log(i, j, k);
 // Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
+
+// const ingredient = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+
+// console.log(ingredient);
+// restaurant.orderPasta(...ingredient);
+
+// Objects
+// const newRestaurant = { founded: 1998, ...restaurant, founder: 'Guiseppe' };
+
+// SPREAD, because on right side of = operator
+const arr = [1, 2, ...[3, 4, 5]];
+
+// REST, because on LEFT side of = operator
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// 2) functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('Mozzarella', 'Tomatoes', 'Basil', 'Spinach');
