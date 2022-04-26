@@ -54,6 +54,28 @@ const restaurant = {
   },
 };
 
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || 'Hello' || 23 || null);
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+console.log('----- AND -----');
+console.log(0 && 'Jonas');
+console.log(7 && true && null && 'Jonas');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('pepperoni', 'mushrooms', 'onions');
+}
+
+restaurant.orderPizza &&
+  restaurant.orderPizza('pepperoni', 'mushrooms', 'onions');
+
 /*
 restaurant.orderDelivery({
   time: '23:30',
@@ -141,6 +163,7 @@ console.log(p, q, r);
 // Objects
 // const newRestaurant = { founded: 1998, ...restaurant, founder: 'Guiseppe' };
 
+/*
 // SPREAD, because on right side of = operator
 const arr = [1, 2, ...[3, 4, 5]];
 
@@ -175,3 +198,4 @@ const x = [23, 5, 7];
 add(...x);
 
 restaurant.orderPizza('Mozzarella', 'Tomatoes', 'Basil', 'Spinach');
+*/
