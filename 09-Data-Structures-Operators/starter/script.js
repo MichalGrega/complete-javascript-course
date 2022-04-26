@@ -54,6 +54,16 @@ const restaurant = {
   },
 };
 
+//Nullish coalescing operator (??)
+
+// restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
+/*
 // Use ANY data type, return ANY data type, short-circuiting
 console.log(3 || 'Jonas');
 console.log('' || 'Jonas');
@@ -75,6 +85,7 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza &&
   restaurant.orderPizza('pepperoni', 'mushrooms', 'onions');
+*/
 
 /*
 restaurant.orderDelivery({
