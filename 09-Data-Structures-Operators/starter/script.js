@@ -15,7 +15,7 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day ${2 + 2}`]: {
+  sat: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -55,6 +55,131 @@ const restaurant = {
     );
   },
 };
+/*
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
+}
+*/
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try again!'],
+]);
+console.log(question);
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(answer === question.get('correct')));
+
+//Convert map to array
+console.log([...question]);
+// console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
+/*
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+console.log(rest.has('categories'));
+rest.delete(2);
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
+*/
+/*
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(new Set('Jonas'));
+console.log(orderSet.size);
+console.log(orderSet.has('Bread'));
+console.log(orderSet.has('Pizza'));
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet);
+for (const order of orderSet) console.log(order);
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+*/
+/* //////////////////////////////////////////////////////////////////////////
+// Optional chaining
+
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [
+  {
+    name: 'Jonas',
+    email: 'hello@jonas.io',
+  },
+];
+
+console.log(users[1]?.name ?? 'User array empty');
+*/
+
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
