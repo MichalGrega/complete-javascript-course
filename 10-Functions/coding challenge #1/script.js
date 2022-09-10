@@ -208,31 +208,56 @@ const poll = {
   answers: new Array(4).fill(0),
   registerNewAnswer() {
     // debugger;
-    let answer = -1;
-    while (answer === NaN || answer < 0 || answer > this.options.length - 1) {
-      answer = Number(
-        prompt(
-          `What is your favourite programming language?\n${this.options.join(
-            ",\n"
-          )}\n(Write option number)`
-        )
-      );
-      if (answer === NaN || answer < 0 || answer > this.options.length - 1)
-        alert("Wrong answer, try again");
+    const answer = Number(
+      prompt(
+        `${this.question}\n${this.options.join("\n")}\n(Write option number)`
+      )
+    );
+
+    console.log(answer);
+
+    typeof answer === "number" &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+
+    this.displayResults();
+    this.displayResults("string");
+    // while (answer === NaN || answer < 0 || answer > this.options.length - 1) {
+    //   answer = Number(
+    //     prompt(
+    //       `What is your favourite programming language?\n${this.options.join(
+    //         ",\n"
+    //       )}\n(Write option number)`
+    //     )
+    //   );
+    //   if (answer === NaN || answer < 0 || answer > this.options.length - 1)
+    //     alert("Wrong answer, try again");
+    // }
+    // this.answers[answer]++;
+    // displayResults();
+  },
+  displayResults(type = "array") {
+    if (type === "array") {
+      console.log(this.answers);
+    } else if (type === "string") {
+      console.log(`Poll results are ${this.answers.join(", ")}`);
     }
-    this.answers[answer]++;
-    displayResults();
   },
 };
 
-const displayResults = (type) => {
-  if (type === "array") {
-    console.log(poll.answers);
-  } else {
-    console.log(`Poll results are ${poll.answers.join(", ")}.`);
-  }
-};
+// const displayResults = (type) => {
+//   if (type === "array") {
+//     console.log(poll.answers);
+//   } else {
+//     console.log(`Poll results are ${poll.answers.join(", ")}.`);
+//   }
+// };
 
-const registerAnswer = poll.registerNewAnswer.bind(poll);
+// const registerAnswer = poll.registerNewAnswer.bind(poll);
 
-document.querySelector(".poll").addEventListener("click", registerAnswer);
+document
+  .querySelector(".poll")
+  .addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+poll.displayResults.call({ answers: [5, 2, 3] }, "string");
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, "string");
